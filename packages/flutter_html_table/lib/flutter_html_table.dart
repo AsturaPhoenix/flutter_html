@@ -117,7 +117,8 @@ Widget _layoutCells(RenderContext context, BoxConstraints constraints) {
                     Alignment.centerLeft,
                 child: CssBoxWidget.withInlineSpanChildren(
                   children: [context.parser.parseTree(context, child)],
-                  style: child.style, //TODO updated this. Does it work?
+                  style: child.style.copyOnlyInherited(
+                      Style()), //TODO updated this. Does it work?
                 ),
               ),
             ),
